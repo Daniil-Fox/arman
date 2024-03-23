@@ -1,0 +1,33 @@
+.third-slide {
+  padding-top: 11rem;
+  padding-bottom: 2rem;
+  padding-left: calc(13.333333vw + 1.5rem);
+  padding-right: calc(13.333333vw + 1.5rem);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__title {
+    grid-column: 2 span;
+  }
+
+  &__text {
+    grid-column: 2 span;
+    margin-bottom: 3vh;
+  }
+
+  &__desc {
+    margin-bottom: 3rem;
+  }
+
+  &__btn {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    color: #292929;
+
+    border-color: rgba(41, 41, 41, 0.5);
+  }
+}

@@ -1,0 +1,53 @@
+.second-slide {
+
+  height: 100%;
+  padding-left: calc(13.333333vw + 1.5rem);
+  padding-right: 13.333333vw;
+
+  &__title {
+    margin-bottom: 5rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+    height: 100%;
+  }
+
+  &__items {
+    flex-direction: column;
+
+    &>.swiper-slide {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__left {
+    padding-top: 14rem;
+    padding-bottom: 4rem;
+    padding-left: 1.5rem;
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__slider {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

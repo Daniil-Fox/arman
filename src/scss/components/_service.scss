@@ -1,0 +1,57 @@
+.service {
+  padding: 0 1rem;
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22.7rem;
+    margin-bottom: 1rem;
+
+    svg {
+      height: 100%;
+      object-fit: cover;
+
+      .orange {
+        stroke: #B0B0B0;
+        transition: stroke .3s ease-out;
+      }
+
+      .gray {
+        stroke: #FFA878;
+        transition: stroke .3s ease-out;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #292929;
+
+    transition: color .3s ease-out;
+  }
+
+  @include hover {
+    .service__image {
+      svg {
+        .orange {
+          stroke: #FFA878;
+        }
+
+        .gray {
+          stroke: #B0B0B0;
+        }
+      }
+    }
+
+    .service__title {
+      color: #FFA878;
+    }
+  }
+}
