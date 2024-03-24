@@ -1552,8 +1552,15 @@ a {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
-  -webkit-transition: color 0.5s ease-out;
-  transition: color 0.5s ease-out;
+  -webkit-transition: color 0.5s ease-out, padding-bottom 0.3s ease-out;
+  transition: color 0.5s ease-out, padding-bottom 0.3s ease-out;
+  will-change: padding-bottom;
+}
+.nav__link.dropdown-active {
+  padding-bottom: 3rem;
+}
+.nav__link a {
+  color: inherit;
 }
 @media (max-width: 1024px) {
   .nav__link {
@@ -1581,6 +1588,7 @@ a {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  pointer-events: none;
 }
 @media (max-width: 1024px) {
   .nav__link-extra .plus {
@@ -1594,15 +1602,35 @@ a {
   -webkit-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
+@media (max-width: 1024px) {
+  .nav-extra {
+    padding-right: 7px;
+    background-color: #fff;
+    padding: 1rem;
+  }
+}
 .nav-extra ::-webkit-scrollbar {
   width: 1px;
   border-radius: 20px;
+}
+@media (max-width: 1024px) {
+  .nav-extra ::-webkit-scrollbar {
+    border-radius: 5px;
+    width: 5px;
+  }
 }
 .nav-extra ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.5);
 }
 .nav-extra ::-webkit-scrollbar-thumb {
   background-color: #fff;
+}
+@media (max-width: 1024px) {
+  .nav-extra ::-webkit-scrollbar-thumb {
+    background-color: #ffa878;
+    border-radius: 5px;
+    width: 5px;
+  }
 }
 .nav-extra__list {
   display: -webkit-box;
@@ -1617,11 +1645,23 @@ a {
   max-height: 64rem;
   padding-right: 1.5rem;
 }
+@media (max-width: 1024px) {
+  .nav-extra__list {
+    max-height: 38rem;
+    padding: 0;
+  }
+}
 .nav-extra__link {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 120%;
   color: #fff;
+}
+@media (max-width: 1024px) {
+  .nav-extra__link {
+    color: #ea5b0c;
+    font-size: 1.6rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

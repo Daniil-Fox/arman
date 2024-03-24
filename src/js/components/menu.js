@@ -42,54 +42,100 @@ burgerBtn.forEach(btn => {
     }, 500)
 
     const contentDefault = menu.querySelector(`[data-menu-content="default"]`)
-    const contentSphere = menu.querySelector('[data-menu-content="sphere"]')
-    menuItems.forEach(link => {
+    let temp = menu.querySelector('.nav-extra--main[data-menu-content="sphere"]')
+    let contentSphereMob = menu.querySelector('.nav-extra--mob[data-menu-content="sphere"]')
+    let contentSphere = temp
 
 
-      link.addEventListener('mouseenter', e => {
-        e.stopPropagation()
+    if(window.matchMedia('(max-width: 1024px)').matches){
+      contentSphere = contentSphereMob
+    }
+
+    function enterLink(link, e){
+      e.stopPropagation()
+      menuItems.forEach(it => {
+        it.classList.add('disable')
+      })
+
+      if(link.dataset.menuExtra == "sphere"){
+        contentDefault.style.opacity = 0
+
+        setTimeout(() => {
+          contentDefault.style.display = 'none'
+        }, 300)
+
+        setTimeout(() => {
+          contentSphere.style.display = 'block'
+        }, 305)
+
+        setTimeout(() => {
+          contentSphere.style.opacity = '1'
+        }, 310)
+      }
+      e.currentTarget.classList.remove('disable')
+    }
+
+    function leaveLink(link, e){
+      if(!link.dataset.menuExtra){
         menuItems.forEach(it => {
-          it.classList.add('disable')
+          it.classList.remove('disable')
+        })
+        contentSphere.style.opacity = 0
+
+        setTimeout(() => {
+          contentSphere.style.display = 'none'
+        }, 300)
+
+        setTimeout(() => {
+          contentDefault.style.display = 'flex'
+        }, 305)
+
+        setTimeout(() => {
+          contentDefault.style.opacity = '1'
+        }, 310)
+      }
+    }
+
+
+    menuItems.forEach(link => {
+      if(window.matchMedia('(min-width: 1025px)').matches){
+        link.addEventListener('mouseenter', e => {
+          enterLink(link, e)
         })
 
-        if(link.dataset.menuExtra == "sphere"){
-          contentDefault.style.opacity = 0
+        link.addEventListener('mouseleave', e => {
+          leaveLink(link, e)
+        })
+      } else {
+        link.addEventListener('click', e => {
+          const isActive = link.classList.toggle('dropdown-active')
+          if(isActive){
+            menuItems.forEach(it => {
+              it.classList.add('disable')
+            })
 
-          setTimeout(() => {
-            contentDefault.style.display = 'none'
-          }, 300)
+            if(link.dataset.menuExtra == "sphere"){
+              setTimeout(() => {
+                contentSphere.style.display = 'block'
+              }, 305)
 
-          setTimeout(() => {
-            contentSphere.style.display = 'block'
-          }, 305)
+              setTimeout(() => {
+                contentSphere.style.opacity = '1'
+              }, 310)
+            }
+            e.currentTarget.classList.remove('disable')
+          } else {
+              menuItems.forEach(it => {
+                it.classList.remove('disable')
+              })
+              contentSphere.style.opacity = 0
 
-          setTimeout(() => {
-            contentSphere.style.opacity = '1'
-          }, 310)
-        }
-        e.currentTarget.classList.remove('disable')
-      })
-
-      link.addEventListener('mouseleave', e => {
-        if(!link.dataset.menuExtra){
-          menuItems.forEach(it => {
-            it.classList.remove('disable')
-          })
-          contentSphere.style.opacity = 0
-
-          setTimeout(() => {
-            contentSphere.style.display = 'none'
-          }, 300)
-
-          setTimeout(() => {
-            contentDefault.style.display = 'flex'
-          }, 305)
-
-          setTimeout(() => {
-            contentDefault.style.opacity = '1'
-          }, 310)
-        }
-      })
+              setTimeout(() => {
+                contentSphere.style.display = 'none'
+              }, 300)
+          }
+        })
+      }
     })
 
 

@@ -91,7 +91,16 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
-    transition: color .5s ease-out;
+    transition: color .5s ease-out, padding-bottom .3s ease-out;
+    will-change: padding-bottom;
+
+    &.dropdown-active {
+      padding-bottom: 3rem;
+    }
+
+    a {
+      color: inherit;
+    }
 
     @include tablet {
       font-size: 2rem;
@@ -115,6 +124,7 @@
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
+        pointer-events: none;
 
         @include tablet {
           width: 2.5rem;
@@ -129,17 +139,35 @@
   display: none;
   transition: opacity .3s ease-out;
 
+  @include tablet {
+    padding-right: 7px;
+    background-color: #fff;
+    padding: 1rem;
+  }
+
   ::-webkit-scrollbar {
     width: 1px;
     border-radius: 20px;
+
+    @include tablet {
+      border-radius: 5px;
+      width: 5px;
+    }
   }
 
   ::-webkit-scrollbar-track {
     background: rgba(#fff, 0.5);
+
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: #fff;
+
+    @include tablet {
+      background-color: #ffa878;
+      border-radius: 5px;
+      width: 5px;
+    }
   }
 
   &__list {
@@ -150,13 +178,23 @@
     max-height: 64rem;
     padding-right: 1.5rem;
 
+    @include tablet {
+      max-height: 38rem;
+      padding: 0;
+    }
+
   }
 
   &__link {
     font-family: var(--font-family);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 120%;
     color: #fff;
+
+    @include tablet {
+      color: #ea5b0c;
+      font-size: 1.6rem;
+    }
   }
 }
