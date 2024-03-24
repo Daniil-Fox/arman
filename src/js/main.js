@@ -32,4 +32,7 @@ if(window.matchMedia('(max-width: 1024px)').matches){
   })
 }
 
-
+var video =  document.querySelector('.first-slide__video video');
+window.addEventListener('DOMContentLoaded', () => {
+  video.play();
+})
