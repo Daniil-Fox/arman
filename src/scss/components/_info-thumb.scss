@@ -6,17 +6,26 @@
   position: relative;
   overflow: hidden;
 
+  @include tablet {
+    padding: 3.2rem 1rem;
+  }
+
   &__count {
     display: block;
     font-family: var(--second-family);
     font-weight: 700;
-    font-size: 32px;
+    font-size: 3.2rem;
     text-transform: uppercase;
     color: #ea5b0c;
     position: relative;
     z-index: 4;
     transition: color .3s ease-out;
     margin-bottom: 3rem;
+
+    @include tablet {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
   }
 
   &__title {
@@ -31,6 +40,11 @@
     z-index: 4;
     transition: color .3s ease-out;
 
+    @include tablet {
+      font-size: 1.4rem;
+      padding-top: 1rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -41,6 +55,10 @@
       height: .1rem;
       background-color: #a6a6a6;
       transition: background-color .3s ease-out;
+
+      @include tablet {
+        width: 15rem;
+      }
     }
   }
 

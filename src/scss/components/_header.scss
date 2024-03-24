@@ -6,15 +6,28 @@
   z-index: 100;
   padding: 3rem 3.5rem;
 
+  @include tablet {
+    padding: 1rem;
+  }
+
   &__container {
     display: flex;
     align-items: center;
     gap: 8rem;
+
+    @include tablet {
+      gap: 2rem;
+      justify-content: space-between;
+    }
   }
 
   &__logo {
     width: 18.5rem;
     height: auto;
+
+    @include tablet {
+      width: 13rem;
+    }
 
     svg {
       width: 100%;
@@ -22,6 +35,7 @@
 
       .arman {
         fill: #fff;
+        transition: fill .5s ease-out;
       }
     }
   }
@@ -30,6 +44,10 @@
     display: flex;
     align-items: center;
     gap: 4.6rem;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__lang {
@@ -39,6 +57,7 @@
     font-size: 2.4rem;
     color: #fff;
     cursor: pointer;
+    transition: color .5s ease-out;
 
     &.active {
       &::after {
@@ -61,12 +80,18 @@
     height: 2rem;
     cursor: pointer;
 
+    @include tablet {
+      width: 4rem;
+      height: 1rem;
+    }
+
     .line {
       position: relative;
       display: block;
       width: 100%;
       height: 0.1rem;
       background-color: #fff;
+      transition: background-color .5s ease-out;
 
       &::before {
         content: "";
@@ -76,6 +101,11 @@
         width: 100%;
         height: 0.1rem;
         background-color: #fff;
+        transition: background-color .5s ease-out;
+
+        @include tablet {
+          bottom: -1rem;
+        }
       }
     }
   }
@@ -97,6 +127,13 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include tablet {
+      width: unset;
+      padding: unset;
+      position: static;
+      border: none;
+    }
+
     span {
       display: inline-block;
       font-family: var(--font-family);
@@ -112,6 +149,10 @@
 
       &[disabled] {
         pointer-events: none;
+      }
+
+      @include tablet {
+        display: none;
       }
     }
   }

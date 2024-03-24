@@ -1,22 +1,99 @@
 .second-slide {
-
   height: 100%;
   padding-left: calc(13.333333vw + 1.5rem);
   padding-right: 13.333333vw;
+  overflow-y: auto;
+
+  @include tablet {
+    padding: 0 1rem;
+    padding-top: 4rem;
+  }
 
   &__title {
     margin-bottom: 5rem;
+
+    @include tablet {
+      display: none;
+      margin-bottom: 4rem;
+    }
+
+    &--mob {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
   }
 
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10rem;
     height: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding-top: 8.5rem;
+    }
+  }
+
+  &__close {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-top: 3rem;
+    border-top: 1px solid #a6a6a6;
+    border-bottom: 1px solid #a6a6a6;
+    padding: 2rem 1rem;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #292929;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-out;
+    cursor: pointer;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__pagination {
+    display: none;
+    position: static;
+
+    @include tablet {
+      display: block;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #9c9c9c;
+      width: .5rem;
+      height: .5rem;
+
+      &-active {
+        border: 1px solid #ea5b0c;
+        background-color: transparent;
+      }
+
+    }
   }
 
   &__items {
     flex-direction: column;
+
+    @include tablet {
+      order: -1;
+      flex-direction: row;
+    }
 
     &>.swiper-slide {
       &:not(:last-child) {
@@ -33,14 +110,29 @@
 
   &__left {
     padding-top: 14rem;
-    padding-bottom: 4rem;
     padding-left: 1.5rem;
+    padding-right: 10rem;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__right {
+    @include tablet {
+      order: -1;
+    }
+  }
+
+  &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+
+    @include tablet {
+      grid-template-rows: unset;
+    }
   }
 
   &__slider {

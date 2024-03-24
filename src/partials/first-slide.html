@@ -1,34 +1,38 @@
-<section class="first-slide">
+<section class="first-slide" id="about" data-index="0">
   <h2 class="visually-hidden">title</h2>
   <div class="first-slide__content active" data-slide-content="01">
     <div class="first-slide__background">
-      <video src="./cover.mp4" autoplay muted loop>
-        <source srcset="./cover.mp4">
-      </video>
+      <div class="first-slide__video">
+        <video autoplay muted loop>
+          <source src="./cover-mob.mp4" media="(max-width: 768px)">
+          <source src="./cover.mp4">
+        </video>
+      </div>
     </div>
     <div class="first-slide__text ">
       <h1 class="first-slide__title title1">
         мы на связи
       </h1>
-      <div class="first-slide__description">
+      <div class="first-slide__description first-slide__description--start">
         <p class="first-slide__desc">
           Системная интеграция надежных решений для промышленности
         </p>
         <a href="#" class="btn btn-reset first-slide__btn">Подробнее</a>
       </div>
     </div>
-    <div class="first-slide__cover"></div>
+    <div class="first-slide__cover first-slide__cover--start"></div>
   </div>
   <div class="first-slide__content" data-slide-content="02">
     <div class="first-slide__background">
       <picture>
+        <source srcset="./img/slides/02-mob.webp" media="(max-width: 1024px)">
         <source srcset="./img/slides/02.webp">
         <img src="./img/slides/02.jpg" alt="">
       </picture>
     </div>
     <div class="first-slide__text ">
       <h2 class="first-slide__title title2">
-        1% С ОБОРОТА АРМАН НАПРАВЛЯЕТ НА РАЗВИТИЕ ДЕТСКОЙ ИНЖЕНЕРНОЙ ШКОЛЫ
+        РАЗВИТИЕ ДЕТСКОЙ ИНЖЕНЕРНОЙ ШКОЛЫ
       </h2>
       <div class="first-slide__description">
         <p class="first-slide__desc">
@@ -43,6 +47,7 @@
   <div class="first-slide__content" data-slide-content="03">
     <div class="first-slide__background">
       <picture>
+        <source srcset="./img/slides/03-mob.webp" media="(max-width: 1024px)">
         <source srcset="./img/slides/03.webp">
         <img src="./img/slides/03.jpg" alt="">
       </picture>
@@ -63,6 +68,7 @@
   <div class="first-slide__content" data-slide-content="04">
     <div class="first-slide__background">
       <picture>
+        <source srcset="./img/slides/04-mob.webp" media="(max-width: 1024px)">
         <source srcset="./img/slides/04.webp">
         <img src="./img/slides/04.jpg" alt="">
       </picture>
@@ -83,6 +89,7 @@
   <div class="first-slide__content" data-slide-content="05">
     <div class="first-slide__background">
       <picture>
+        <source srcset="./img/slides/01-mob.webp" media="(max-width: 1024px)">
         <source srcset="./img/slides/01.webp">
         <img src="./img/slides/01.jpg" alt="">
       </picture>

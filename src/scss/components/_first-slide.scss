@@ -5,6 +5,13 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 8.5rem;
+  }
+
   &__cover {
     position: absolute;
 
@@ -16,6 +23,15 @@
     width: 0;
 
     transition: width .5s ease-out;
+
+    &--start {
+      right: unset;
+      left: 13.33333vw;
+    }
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__content {
@@ -25,10 +41,16 @@
     opacity: 0;
     transition: opacity .5s ease-out, visibility .5s ease-out, transform .5s ease-out;
     padding: 0 1.5rem;
+    display: none;
+
+    @include tablet {
+      margin-bottom: 3rem;
+    }
 
     &.active {
       opacity: 1;
       visibility: visible;
+      display: block;
 
       .first-slide__background {
         transform: scale(1);
@@ -60,6 +82,13 @@
     top: 25vh;
     min-height: 46rem;
     justify-content: space-between;
+
+    @include tablet {
+      position: static;
+      padding-top: 0;
+      min-height: 24rem;
+      gap: 2rem;
+    }
   }
 
   &__title {
@@ -67,6 +96,10 @@
     position: relative;
     z-index: 4;
     padding-left: 1.5rem;
+
+    @include tablet {
+      padding-left: 0;
+    }
   }
 
   &__description {
@@ -74,6 +107,16 @@
     max-width: 44rem;
     align-self: flex-end;
     margin-right: 12.5rem;
+
+    &--start {
+      align-self: flex-start;
+      margin-left: 2.5rem;
+    }
+
+    @include tablet {
+      max-width: unset;
+      margin-right: 0;
+    }
   }
 
   &__desc {
@@ -86,6 +129,11 @@
     margin-bottom: 3.5rem;
 
     transition: color .5s ease-out;
+
+    @include tablet {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
   }
 
   &__background {
@@ -102,9 +150,28 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      // @include tablet {
+      //   object-position: 40%;
+      // }
+    }
+
+
+
+    @include tablet {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(#000, 0.4);
+      }
     }
   }
 
+  &__video {
+    width: 100%;
+    height: 100%;
+  }
 
   &__thumbs {
     position: absolute;
@@ -115,6 +182,12 @@
     position: relative;
     z-index: 4;
     margin-top: auto;
+
+    @include tablet {
+      flex-direction: column;
+      position: static;
+      gap: 1rem;
+    }
   }
 
   &__thumb {
@@ -130,6 +203,11 @@
     flex-basis: 28.5rem;
     border: 1px solid rgba(255, 255, 255, 0.5);
 
+    @include tablet {
+      flex-basis: auto;
+      padding: 2.1rem 4rem;
+    }
+
     span {
       position: relative;
       z-index: 4;
@@ -137,7 +215,6 @@
       font-weight: 700;
       font-size: 2rem;
       color: #fff;
-
     }
 
     &::before {

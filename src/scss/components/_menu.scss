@@ -8,7 +8,7 @@
   z-index: 3;
   background-color: #ffac5f;
   transform: translateY(-100%);
-
+  overflow-y: auto;
   transition: transform .5s ease-out;
 
   &.active {
@@ -20,30 +20,58 @@
     padding-right: calc(13.33333vw);
     padding-top: 15vh;
 
+    @include tablet {
+      padding: 0 1rem;
+      padding-top: 6.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 3rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
 
   &__right {
     flex: 1;
+
+    @include tablet {
+      align-self: center;
+      text-align: center;
+    }
   }
 
   &__address {
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 3rem;
+    padding-right: 1.5rem;
+    transition: opacity .3s ease-out;
 
-    display: none;
+    @include tablet {
+      align-items: center;
+    }
   }
 
   &__link {
     display: inline-block;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 2.4rem;
     letter-spacing: 0.1em;
     color: #fff;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
   }
 }
 
@@ -63,10 +91,44 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
+    transition: color .5s ease-out;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    &.disable {
+      color: rgba(#fff, 0.5);
+    }
+
+    &-extra {
+      display: inline-flex;
+      align-items: center;
+      gap: 3rem;
+
+      .plus {
+        content: "";
+        display: block;
+        width: 4.5rem;
+        height: 4.5rem;
+        background-image: url('./../img/plus.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include tablet {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
   }
 }
 
 .nav-extra {
+  display: none;
+  transition: opacity .3s ease-out;
+
   ::-webkit-scrollbar {
     width: 1px;
     border-radius: 20px;
@@ -86,7 +148,7 @@
     gap: 3rem;
     overflow-y: auto;
     max-height: 64rem;
-
+    padding-right: 1.5rem;
 
   }
 

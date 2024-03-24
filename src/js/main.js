@@ -19,23 +19,17 @@ firstSlideSlides.forEach(f => {
   })
 })
 
+const secondSlide = document.querySelector('.second-slide')
 
-
-const burgerBtn = document.querySelectorAll('[data-burger-btn]')
-
-burgerBtn.forEach(btn => {
-  btn.addEventListener('click', e => {
-    const menu = document.querySelector('.menu')
-    const text = document.querySelector('.header__menu span')
-    let isActive = menu.classList.toggle('active')
-    burgerBtn.forEach(b => { b.setAttribute('disabled', '')})
-
-    text.style.transform = 'rotate(90deg) translateY(-20vw)'
-
-    setTimeout(() => {
-      text.textContent = isActive ? 'Закрыть' : 'Меню'
-      text.style.transform = null
-      burgerBtn.forEach(b => { b.removeAttribute('disabled')})
-    }, 500)
+if(window.matchMedia('(max-width: 1024px)').matches){
+  document.querySelector('.main-slider__container').addEventListener('scroll', () => {
+    const rect = secondSlide.getBoundingClientRect()
+    if(rect.y <= window.scrollY){
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
   })
-})
+}
+
+

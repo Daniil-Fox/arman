@@ -4,18 +4,50 @@
   padding-left: calc(13.333333vw + 1.5rem);
   padding-right: calc(13.333333vw + 1.5rem);
 
+  @include tablet {
+    padding: 8.5rem 0 2rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+
+    @include tablet {
+      flex-direction: column;
+      padding: 0 1rem;
+      margin-bottom: 5rem;
+    }
+  }
+
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 2rem;
+      padding: 0 1rem;
+    }
   }
 
   &__title {
-    grid-column: 2 span;
+    flex: 1;
+
+    @include tablet {
+      margin-bottom: 3rem;
+    }
   }
 
   &__text {
-    grid-column: 2 span;
-    margin-bottom: 3vh;
+
+    padding-left: 1.5rem;
+    flex: 1;
+
+    @include tablet {
+      padding-left: 0;
+
+    }
   }
 
   &__desc {
