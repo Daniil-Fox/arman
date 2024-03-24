@@ -374,6 +374,37 @@ a {
   object-fit: cover;
 }
 
+.light .header__logo .arman {
+  fill: #fff;
+}
+.light .main-slider__container {
+  background-color: #000;
+}
+.light .header__menu {
+  border-left-color: rgba(255, 255, 255, 0.5);
+}
+.light .header__menu span {
+  color: #fff;
+}
+.light .header__menu .line {
+  background-color: #fff;
+}
+.light .header__menu .line::before {
+  background-color: #fff;
+}
+.light .header__lang {
+  color: #fff;
+}
+.light .header__lang.active::after {
+  background-color: #fff;
+}
+.light .main-slider__container::before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.light .main-slider__container > .swiper-wrapper > .swiper-slide::before {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .header {
   position: fixed;
   left: 0;

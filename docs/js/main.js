@@ -173,21 +173,10 @@ burgerBtn.forEach(btn => {
       e.stopPropagation();
     });
     let isActive = menu.classList.toggle('active');
-    let isDark = document.body.classList.contains('dark');
-    let wasDark = !isDark;
-    let flag = false;
-    for (let i = 0; i < mainSlides.length; i++) {
-      if (mainSlides[i].classList.contains('swiper-slide-active') && i == 0) {
-        flag = true;
-        break;
-      }
-    }
-    if (!flag) {
-      if (isDark && isActive) {
-        document.body.classList.remove('dark');
-      } else if (wasDark && !isActive) {
-        document.body.classList.add('dark');
-      }
+    if (isActive) {
+      document.body.classList.add('light');
+    } else {
+      document.body.classList.remove('light');
     }
     burgerBtn.forEach(b => {
       b.setAttribute('disabled', '');

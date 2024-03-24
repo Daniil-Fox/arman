@@ -315,3 +315,55 @@ a {
     }
   }
 }
+
+
+.light {
+
+  .header__logo {
+    .arman {
+      fill: #fff;
+    }
+  }
+
+  .main-slider__container {
+    background-color: #000;
+  }
+
+  .header__menu {
+    border-left-color: rgba(255, 255, 255, 0.5);
+
+    span {
+      color: #fff;
+    }
+
+    .line {
+      background-color: #fff;
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .header__lang {
+    color: #fff;
+
+    &.active {
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .main-slider__container {
+    &::before {
+      background-color: rgba(#fff, 0.5);
+    }
+
+    &>.swiper-wrapper {
+      &>.swiper-slide::before {
+        background-color: rgba(#fff, 0.5);
+      }
+    }
+  }
+}
