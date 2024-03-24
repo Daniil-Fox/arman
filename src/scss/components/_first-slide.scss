@@ -12,28 +12,6 @@
 
   }
 
-  &__cover {
-    position: absolute;
-
-    top: 0;
-    right: 13.333333vw;
-    // width: 71rem;
-    height: calc(100% - 16.5rem);
-    background-color: #fff;
-    width: 0;
-
-    transition: width .5s ease-out;
-
-    &--start {
-      right: unset;
-      left: 13.33333vw;
-    }
-
-    @include tablet {
-      display: none;
-    }
-  }
-
   &__content {
 
     width: 100%;

@@ -118,6 +118,7 @@
 
     &.swiper-pagination-bullet-active {
       --swiper-pagination-bullet-opacity: 1;
+      color: #ea5b0c !important;
 
       &::before {
         width: 4rem;
