@@ -23,10 +23,13 @@
     svg {
       height: 100%;
       object-fit: cover;
+      will-change: stroke;
+      fill: none;
 
       .orange {
         stroke: #B0B0B0;
         transition: stroke .3s ease-out;
+
       }
 
       .gray {

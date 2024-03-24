@@ -11,8 +11,6 @@ closeBtn.addEventListener('click', () => {
 
 if(window.matchMedia('(min-width: 1025px)').matches){
   tabsContent[0].classList.add('active')
-  tabs[0].classList.add('active')
-
 }
 tabs.forEach(t => {
   t.addEventListener('click', () => {

@@ -31,6 +31,7 @@
     grid-template-columns: repeat(2, 1fr);
     height: 100%;
 
+
     @include tablet {
       display: flex;
       flex-direction: column;
@@ -119,6 +120,9 @@
   }
 
   &__right {
+    padding-top: .05rem;
+    padding-bottom: .1rem;
+
     @include tablet {
       order: -1;
     }

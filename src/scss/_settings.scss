@@ -36,6 +36,7 @@ html {
 }
 
 body {
+  cursor: none;
   height: 100%;
 }
 
@@ -366,4 +367,28 @@ a {
       }
     }
   }
+}
+
+.rounded {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: rgba(#000, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pointed {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: rgba(#fff, 0.5);
+  pointer-events: none;
 }

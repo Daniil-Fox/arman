@@ -1,8 +1,13 @@
 .third-slide {
-  padding-top: 11rem;
+  padding-top: 14rem;
   padding-bottom: 2rem;
   padding-left: calc(13.333333vw + 1.5rem);
   padding-right: calc(13.333333vw + 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 3rem;
+  height: 100%;
 
   @include tablet {
     padding: 8.5rem 0 2rem;
@@ -11,7 +16,6 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3vh;
 
     @include tablet {
       flex-direction: column;
