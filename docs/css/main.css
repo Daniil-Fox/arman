@@ -228,6 +228,11 @@ a {
   font-size: 2rem;
   color: #fff;
 }
+@media (max-width: 1024px) {
+  .btn {
+    font-size: 1.8rem;
+  }
+}
 
 .title2 {
   margin: 0;

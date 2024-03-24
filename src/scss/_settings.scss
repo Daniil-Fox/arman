@@ -148,6 +148,10 @@ a {
   font-weight: 700;
   font-size: 2rem;
   color: #fff;
+
+  @include tablet {
+    font-size: 1.8rem;
+  }
 }
 
 .title2 {
