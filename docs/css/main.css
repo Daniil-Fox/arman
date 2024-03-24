@@ -225,13 +225,43 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 3rem;
   padding: 1.4rem 4rem;
+  overflow: hidden;
   font-weight: 700;
   font-size: 2rem;
   color: #fff;
+  -webkit-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+}
+.btn span {
+  position: relative;
+  z-index: 3;
 }
 @media (max-width: 1024px) {
   .btn {
     font-size: 1.8rem;
+  }
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #ea5b0c;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+@media (any-hover: hover) {
+  .btn:hover {
+    color: #fff;
+  }
+  .btn:hover::before {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
