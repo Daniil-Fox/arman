@@ -27,6 +27,7 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1rem;
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
@@ -61,9 +62,13 @@
   &__btn {
     font-family: var(--font-family);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2rem;
     color: #292929;
 
     border-color: rgba(41, 41, 41, 0.5);
+
+    @include tablet {
+      font-size: 1.6rem;
+    }
   }
 }
