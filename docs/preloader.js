@@ -31,12 +31,24 @@
 
   function image_loaded(){
     images_loaded_count++
-    if(images_loaded_count >= images_total_count && flag){
-      preloader.style.opacity = '0'
 
-      setTimeout(() => {
-        preloader.remove()
-      }, 4000)
+    if(images_loaded_count >= images_total_count && flag){
+      if (!window.sessionStorage.getItem('done')) {
+        sessionStorage.setItem('done', 1);
+        setTimeout(() => {
+          preloader.style.opacity = '0'
+        }, 6000)
+        setTimeout(() => {
+          preloader.remove()
+        }, 8000)
+      } else {
+        setTimeout(() => {
+          preloader.style.opacity = '0'
+        }, 4000)
+        setTimeout(() => {
+          preloader.remove()
+        }, 6000)
+      }
     }
   }
 

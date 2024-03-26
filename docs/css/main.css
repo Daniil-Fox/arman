@@ -391,8 +391,8 @@ a {
   inset: 0;
   z-index: 1000;
   background-color: #000;
-  -webkit-transition: opacity 3s ease-out 1s;
-  transition: opacity 3s ease-out 1s;
+  -webkit-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
 }
 .preloader__video {
   width: 100%;
@@ -894,6 +894,9 @@ a {
 }
 .first-slide__title--orange {
   color: #ea5b0c;
+}
+.first-slide__title--big {
+  font-size: 6rem;
 }
 @media (max-width: 1024px) {
   .first-slide__title {

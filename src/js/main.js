@@ -37,3 +37,14 @@ const moveCursor = (e)=> {
 }
 
 window.addEventListener('mousemove', moveCursor)
+
+// document.cookie = 'visited=123'
+
+// function getCookie(){
+//   return document.cookie
+// }
+// if (getCookie('visited') == 1) {
+//   console.log('Последующие разы');
+// } else {
+//   console.log('Первый раз');
+// }

@@ -93,6 +93,10 @@
       color: #ea5b0c;
     }
 
+    &--big {
+      font-size: 6rem;
+    }
+
     @include tablet {
       padding-left: 0;
     }
