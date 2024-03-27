@@ -2,11 +2,10 @@
   height: 100%;
   padding-left: calc(13.333333vw + 1.5rem);
   padding-right: 13.333333vw;
-  overflow-y: auto;
 
   @include tablet {
     padding: 0 1rem;
-    padding-top: 4rem;
+
   }
 
   &__title {
@@ -33,6 +32,7 @@
 
 
     @include tablet {
+
       display: flex;
       flex-direction: column;
       gap: 5rem;
@@ -63,7 +63,15 @@
     cursor: pointer;
 
     @include tablet {
+      // display: flex;
+    }
+
+    &.active {
+      position: relative;
+      z-index: 10;
+      opacity: 1;
       display: flex;
+      pointer-events: unset;
     }
   }
 

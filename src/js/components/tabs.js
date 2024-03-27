@@ -4,8 +4,10 @@ const closeBtn = document.querySelector('.second-slide__close')
 
 closeBtn.addEventListener('click', () => {
   clearActive()
-  closeBtn.style.opacity = '0'
-  closeBtn.style.pointerEvents = 'none'
+  // closeBtn.style.opacity = '0'
+  // closeBtn.style.pointerEvents = 'none'
+
+  closeBtn.classList.remove('active')
 })
 
 
@@ -19,8 +21,9 @@ tabs.forEach(t => {
     clearActive()
     document.querySelector(`.second-slide__slider[data-info-content="${dataset}"]`)?.classList.add('active')
     t.classList.add('active')
-    closeBtn.style.opacity = '1'
-    closeBtn.style.pointerEvents = 'unset'
+    // closeBtn.style.opacity = '1'
+    // closeBtn.style.pointerEvents = 'unset'
+    closeBtn.classList.add('active')
   })
 })
 

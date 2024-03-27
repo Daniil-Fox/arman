@@ -4,6 +4,7 @@
   padding-right: 13.33333vw;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 
   &::before {
     content: "";
@@ -16,8 +17,9 @@
   @include tablet {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 2rem;
 
+    // min-height: 100dvh;
+    height: 100dvh;
   }
 
   &__content {
@@ -192,6 +194,7 @@
       flex-direction: column;
       position: static;
       gap: 1rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -210,7 +213,8 @@
 
     @include tablet {
       flex-basis: auto;
-      padding: 2.1rem 4rem;
+      padding: 1.6rem 4rem;
+
     }
 
     span {
@@ -220,6 +224,10 @@
       font-weight: 700;
       font-size: 2rem;
       color: #fff;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
     }
 
     &::before {
@@ -230,6 +238,10 @@
       font-weight: 700;
       font-size: 2rem;
       color: #fff;
+
+      @include tablet {
+        font-size: 1.6rem;
+      }
     }
 
     &::after {
