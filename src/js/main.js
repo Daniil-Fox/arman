@@ -19,6 +19,11 @@ if(window.matchMedia('(max-width: 1024px)').matches){
 
 var video =  document.querySelector('.first-slide__video video');
 window.addEventListener('DOMContentLoaded', () => {
+  if(window.matchMedia("(min-width: 1025px)").matches){
+    video.src = './cover.mp4'
+  } else {
+    video.src = './cover-mob.mp4'
+  }
   video.play();
 })
 
