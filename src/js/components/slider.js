@@ -88,16 +88,16 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   );
-  const ssSliders = document.querySelectorAll('.second-slide__slider')
-  ssSliders.forEach(el => {
-    resizableSwiper('(max-width: 1024px)', el, {
-      slidesPerView: 1,
-      module: [Pagination],
-      pagination: {
-        el: '.second-slide__pagination'
-      }
-    })
-  })
+  // const ssSliders = document.querySelectorAll('.second-slide__slider')
+  // ssSliders.forEach(el => {
+  //   resizableSwiper('(max-width: 1024px)', el, {
+  //     slidesPerView: 1,
+  //     module: [Pagination],
+  //     pagination: {
+  //       el: '.second-slide__pagination'
+  //     }
+  //   })
+  // })
 });
 
 

@@ -101,7 +101,6 @@
 
     @include tablet {
       order: -1;
-      flex-direction: row;
     }
 
     &>.swiper-slide {

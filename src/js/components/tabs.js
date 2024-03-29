@@ -11,10 +11,6 @@ closeBtn.addEventListener('click', () => {
 })
 
 
-if(window.matchMedia('(min-width: 1025px)').matches){
-  tabsContent[0].classList.add('active')
-  tabs[0].classList.add('active')
-}
 tabs.forEach(t => {
   t.addEventListener('click', () => {
     const dataset = t.dataset.infoTab
@@ -23,7 +19,9 @@ tabs.forEach(t => {
     t.classList.add('active')
     // closeBtn.style.opacity = '1'
     // closeBtn.style.pointerEvents = 'unset'
-    closeBtn.classList.add('active')
+    // if(window.matchMedia('(max-width: 1024px)').matches){
+    //   closeBtn.classList.add('active')
+    // }
   })
 })
 
